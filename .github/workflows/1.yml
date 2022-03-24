@@ -1,8 +1,8 @@
 name: abc
 on:
-  push:
-    branches:
-      - deploy
+  #  push:
+  #    branches:
+  #      - deploy
   pull_request:
     types:
       - ready_for_review
