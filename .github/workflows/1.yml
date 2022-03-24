@@ -2,7 +2,7 @@ name: abc
 on:
   push:
     branches:
-      - main
+      - deploy
 jobs:
   job1:
     runs-on: ubuntu-latest
