@@ -6,7 +6,7 @@ on:
   pull_request:
     types:
       - ready_for_review
-      - syncronize
+      - synchronize
     branches:
       - main
 jobs:
