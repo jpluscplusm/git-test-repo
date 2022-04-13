@@ -10,7 +10,6 @@ import (
 )
 
 dagger.#Plan
-
 actions: {
 	deps: docker.#Build & {
 		steps: [
@@ -22,7 +21,7 @@ actions: {
 				}
 			},
 			docker.#Copy & {
-				contents: client.filesystem."./".read.contents
+				contents: client.filesystem.".".read.contents
 				dest:     "/src"
 			},
 			bash.#Run & {
@@ -80,7 +79,7 @@ actions: {
 
 client: {
 	filesystem: {
-		"./": read: {
+		".": read: {
 			contents: dagger.#FS
 			exclude: [
 				"README.md",
@@ -89,7 +88,7 @@ client: {
 				"node_modules",
 			]
 		}
-		"./_build": write: contents: actions.build.contents.output
+		"_build/": write: contents: actions.build.contents.output
 	}
 	env: {
 		APP_NAME:      string
