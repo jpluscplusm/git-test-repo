@@ -1,0 +1,16 @@
+on:
+    push
+
+jobs:
+    foo:
+        runs-on: ubuntu-latest
+        steps: 
+        - name: checkout
+          uses: actions/checkout@v2
+        - name: run our tests and build the project
+          uses: dagger/dagger-for-github@v2
+          with:
+            args: do build
+  
+
+
